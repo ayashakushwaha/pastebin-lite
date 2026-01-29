@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Input } from "./ui/input";
+import { AlertDialogAction, AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
+import { PasteAlert } from "./PasteAlert";
 
 type PasteFormData = {
     content: string;
@@ -18,6 +20,8 @@ export function NewPasteForm() {
         max_views: null,
         ttl_seconds: null,
     });
+    const [open, setOpen] = useState(false);
+    const [responseJson, setResponseJson] = useState({})
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,12 +34,14 @@ export function NewPasteForm() {
             return
         }
 
-        window.alert("paste created.")
+        const resJson = await response.json()
+        setResponseJson(resJson)
         setData({
             content: "",
             max_views: null,
             ttl_seconds: null,
         })
+        setOpen(true)
     }
 
 
@@ -93,6 +99,7 @@ export function NewPasteForm() {
                     }
                 />
             </div>
+            <PasteAlert open={open} onOpenChange={setOpen} resJson={responseJson} />
             <div className="flex space-x-4">
                 <Button type="submit" className="btn max-w-xs">Create</Button>
                 <Button type="submit" className="btn max-w-xs">Reset</Button>

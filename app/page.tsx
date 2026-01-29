@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen font-sans">
-      <main className="flex min-h-screen w-full flex-col py-16 px-16 sm:items-start">
+    <div className="flex font-sans">
+      <main className="flex w-full flex-col py-5 px-10 sm:items-start">
         <NewPasteForm />
       </main>
     </div>

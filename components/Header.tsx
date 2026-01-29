@@ -9,31 +9,11 @@ import {
 import Link from "next/link"
 export default function Header() {
     return (
-        <NavigationMenu>
+        <NavigationMenu className="container pt-1 px-5">
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <Link href='/'>PASTEBIN LOGO</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    {/* <NavigationMenuLink>
-                        <Link href='/api'>API</Link>
-                    </NavigationMenuLink> */}
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <Link href='/tools'>TOOLS</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <Link href='/faq'>FAQ</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink>
-                        <Link href='/new-paste'>NEW PASTE</Link>
+                    <NavigationMenuLink className="text-2xl">
+                        <Link href='/'>PasteBin Lite </Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
