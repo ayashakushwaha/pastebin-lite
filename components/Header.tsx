@@ -17,9 +17,9 @@ export default function Header() {
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink>
+                    {/* <NavigationMenuLink>
                         <Link href='/api'>API</Link>
-                    </NavigationMenuLink>
+                    </NavigationMenuLink> */}
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink>
