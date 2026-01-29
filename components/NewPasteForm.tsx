@@ -44,7 +44,13 @@ export function NewPasteForm() {
         setOpen(true)
     }
 
-
+    const handleReset = () => {
+        setData({
+            content: "",
+            max_views: null,
+            ttl_seconds: null,
+        })
+    }
 
     return (
         <form
@@ -102,9 +108,8 @@ export function NewPasteForm() {
             <PasteAlert open={open} onOpenChange={setOpen} resJson={responseJson} />
             <div className="flex space-x-4">
                 <Button type="submit" className="btn max-w-xs">Create</Button>
-                <Button type="submit" className="btn max-w-xs">Reset</Button>
+                <Button type="button" variant={"secondary"} onClick={handleReset} className="btn max-w-xs">Reset</Button>
             </div>
-
         </form>
     );
 }
